@@ -1,6 +1,7 @@
 import React from "react";
-import { BsFillCartFill } from "react-icons/bs";
+
 import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
 const NavBar = () => {
   return (
     <>
@@ -38,7 +39,8 @@ const NavBar = () => {
               </a>
              
             </div>
-            <Link to="/cart"> <BsFillCartFill /> </Link>
+            <Link to='/cart' ><CartWidget /></Link>
+
           </div>
        
         </div>

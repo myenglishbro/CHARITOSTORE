@@ -8,8 +8,9 @@ const itemList =(props)=>{
     
         <div className="contenedor-cards">
           {
-                props.datos.map(item=><Item key={item.id} {...item}/> )
-        
+               props.datos.length>0
+                ? props.datos.map(item=><Item key={item.id} {...item}/> )
+                : <p>Cargando productos</p>
               }
                 </div>
         );

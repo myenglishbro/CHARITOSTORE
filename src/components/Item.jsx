@@ -10,7 +10,7 @@ const Item =({img,name,description,price,id})=>{
             <p class=" product-description">{description}</p>
             <p class=" product-description">{price}</p>
             <a href=".." class="btn product-button">Comprar</a>
-           <a href=".." class="btn product-button">Detalles</a>
+         
           <Link to={`/producto/${id}`}><button className="btn btn-warning">Detalles</button></Link> 
         </div>
         </div>
