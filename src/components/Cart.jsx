@@ -26,55 +26,58 @@ const Cart = () => {
       </div> 
 
       <div>
+      <div className="contenedor-cards"> 
       {
+
+        
                         cartList.length > 0 &&
-                            cartList.map(item => 
-                            <ol key={item.id}>
-                            <div>
-                                <img src={item.img} alt ="sadasd"/>
-                                <div>
-                                <span>
-                                    <b>Product:</b> {item.name}
-                                </span>
-                                <button type="filled" onClick={() => deleteItem(item.id)}>DELETE</button>
-                                </div>
+                            cartList.map(item => <ol key={item.id}>
+
+
+                       
+                            
+                            <div class="card mb-3 cardi">
+                                  <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src={item.img} class="img-fluid rounded-start" alt="adsadsa"/>
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <h5 class="card-title">{item.name}</h5>
+                                        <p class="card-text">{item.qty} item(s)</p>
+                                        <p class="card-text">$ {item.price} each</p>
+                                        <p class="card-text"><small class="text-muted">$ {calcTotalPerItem(item.id)}</small></p>
+                                        <button type="filled" onClick={() => deleteItem(item.id)}>DELETE</button>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
-                            <div>
-                                <div>
-                                <p>{item.qty} item(s)</p>
-                                /
-                                <p>$ {item.price} each</p>
-                                </div>
-                                <p>$ {calcTotalPerItem(item.id)} </p>
-                            </div>
+                            
                             </ol>
                             )
-                    }
+       }
+       </div>
       </div>
 
       <div>
 
       {
                     cartList.length > 0 &&
-                        <div>
-                            <h1>ORDER SUMMARY</h1>
-                            <div>
-                                <h3>Subtotal</h3>
-                                <p><span number={calcSubTotal()} /></p>
-                            </div>
-                            <div>
-                                <p>Taxes</p>
-                                <p><span number={calcTaxes()} /></p>
-                            </div>
-                            <div>
-                                <p>Descuento Impuesto</p>
-                                <p><span number={-calcTaxes()} /></p>
-                            </div>
-                            <div type="total">
-                                <h2>Total</h2>
-                                <p><span number={calcTotal()} /></p>
-                            </div>
-                            <button>CHECKOUT NOW</button>
+
+                        <div class="card text-center">
+                        <div class="card-header">ORDER SUMMARY </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Resumen de Compra</h5>
+                          <p class="card-text">Subtotal:{calcSubTotal()} </p>
+                          <p class="card-text">Taxes. :{calcTaxes()} </p>
+                          <p class="card-text">Descuento Impuesto:{-calcTaxes()}</p>
+                          <p class="card-text">Total:{calcTotal()}</p>
+                          <a href=".." class="btn btn-primary">CHECKOUT NOW</a>
+                        </div>
+                           
+                          
+                           
+                      
                         </div>
                 }
 
@@ -92,16 +95,6 @@ const Cart = () => {
 
 
 
-
-       <ul>
-        {
-          cartList.length===0
-          ? <p>Your cart is empty</p>
-          : cartList.map(item=> <li key={item.id}>{item.name}-cantidad comprada :{item.qty}<img className='img' src={item.img} alt="producto"/>-<button onClick={()=>deleteItem(item.id)}>Delete producto</button></li>
-          )
-         
-        }
-       </ul> 
     </>
   );
 }
