@@ -92,7 +92,7 @@ const Cart = () => {
 
                        
                             
-                            <div class="card mb-3 cardi">
+                            <div class="card mb-12 cardi">
                                   <div class="row g-0">
                                     <div class="col-md-4">
                                       <img src={item.img} class="img-fluid rounded-start" alt="adsadsa"/>
